@@ -11,3 +11,96 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.cont{
+  position: relative;
+}
+
+.chatdet{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.inputdet{
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.messages{
+  background-color: #ddddf7;
+  padding:10px;
+  min-height: 74vh;
+}
+
+.message{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.message.owner{
+  flex-direction: row-reverse;
+}
+.messages .message.owner .messagecontent{
+  align-items: flex-end;
+}
+
+.message.owner .messagecontent p {
+  background-color: #6785e8;
+  color:white;
+  border-radius:  10px 0px 10px 10px;
+}
+
+
+.messageinfo{
+  display: flex;
+  flex-direction: column;
+  color:gray;
+  font-weight: 300;
+}
+.messageinfo img{
+  border-radius :50%;
+  object-fit: cover;
+}
+
+.messages .message .messagecontent {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.messagecontent img{
+  width:50%;
+}
+
+.messagecontent p {
+  background-color: white;
+  padding:10px 20px;
+  border-radius: 0px 10px 10px 10px;
+  max-width: max-content;
+}
+
+.input{
+  height: 50px;
+  background-color: white;
+  padding:10px
+}
+
+.click{
+  cursor: pointer;
+  padding:10px;
+  border-radius: 10px;
+}
+.click:hover{
+  background-color: #8695a7;
+}
+
+.smtext{
+  font-size: small;
+}
