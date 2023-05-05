@@ -26,7 +26,7 @@ function Login() {
       }
   return (
     <div className='vh-100 d-flex align-items-center justify-content-center' style={{backgroundColor:"#9dc1fa"}}>
-    <div className='shadow rounded px-4 py-5 col-md-3 col-6' style={{backgroundColor:"white"}}>
+    <div className='shadow rounded px-4 py-5 col-md-3 col-9' style={{backgroundColor:"white"}}>
         <h4 className='text-center'><img src={logo} width={40} height={40} alt=""/> Login</h4>
         {err && <div className='bg-danger p-1 m-1 bg-opacity-25 text-center rounded text-danger'>Invalid Credentials </div>}
 
