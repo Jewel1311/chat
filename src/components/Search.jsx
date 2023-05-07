@@ -27,17 +27,27 @@ const Search = () => {
 
     try {
       const querySnapshot = await getDocs(q);
+      if(querySnapshot.docs.length === 0){
+        setErr(true)
+      }
+      else{
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
       });
+      }
     } catch (err) {
       setErr(true);
     }
   };
 
+
   const handleKey = (e) => {
-    e.code === "Enter" && handleSearch();
+    setErr(false)
+    setUser(null)
+    handleSearch();
   };
+
+  
 
   const handleSelect = async () => {
     //check whether the group(chats in firestore) exists, if not create
@@ -78,7 +88,10 @@ const Search = () => {
   };
   return (
     <div className='border border-end-0  border-start-0 border-top-0 py-1'>
-        <input type='text' placeholder='Find a user' className='w-100 form-control' onKeyDown={handleKey} onChange={e => setUsername(e.target.value)} value={username}/>
+      <div className="d-flex">
+        <input type='text' placeholder='Find a user' className='w-100 form-control' onChange={e => setUsername(e.target.value)} value={username}/>
+        <button onClick={handleKey} className="btn btn-primary">Search</button>
+      </div>
 
         {user && 
           <div className='my-2 d-flex align-items-center click' onClick={handleSelect}>
